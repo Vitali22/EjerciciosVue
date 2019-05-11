@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!--Css bootstrap-->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+        <title>Ejemplo Básico de Vue y Bootstrap</title>
+        
+    </head>
+    <body>
+        <div id="app">
+        <center>
+           <h1> {{message}} </h1> <br>
+
+           <h1>Invertido: {{invertido}} </h1>
+        
+           <input type="text" class="form-control" v-model="message" placeholder="Escribe cualquier payasada">
+           <hr><br>
+
+            <button class="btn btn-primary" @click="contador++" :disabled="contador>=100">+</button> 
+            <button class="btn btn-danger" @click="contador--" :disabled="contador===0">-</button>
+            <br>
+            <h1>{{contador}}</h1>
+            <div class="progress">
+                <div 
+                    class="progress-bar"
+                    :class="color"
+                    role="progressbar" 
+                    :style="{'width': contador+'%'}" 
+                    aria-valuenow="25" 
+                    aria-valuemin="0" 
+                    aria-valuemax="100"
+                >
+                {{contador}}
+            </div>
+            </div>
+            <br>
+            {{color}}
+        </center>
+        </div>
+        <!--Scripts-->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/vue.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
