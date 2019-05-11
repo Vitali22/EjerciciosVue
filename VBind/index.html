@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!--Css bootstrap-->
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+        <title>Clases y Estilos Dinámicos</title>
+        
+    </head>
+    <body>
+        <div id="app" class="container mt-5">
+
+            <div  :class="['p-3','text-white',fondo]">
+                Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse.
+            </div>
+            <input type="text" class="form-control my-3" v-model="fondo">
+            <div>
+            <select v-model="fondo">
+                <option disabled>Selecciona una opción</option>
+                <option value="bg-primary" class="bg-primary">bg-primary</option>
+                <option value="bg-secondary" class="bg-secondary">bg-secondary</option>
+                <option value="bg-success" class="bg-success">bg-success</option>
+                <option value="bg-danger" class="bg-danger">bg-danger</option>
+                <option value="bg-warning" class="bg-warning">bg-warning</option>
+                <option value="bg-info" class="bg-info">bg-info</option>
+                <option value="bg-light" class="bg-light">bg-light</option>
+                <option value="bg-dark" class="bg-dark">bg-dark</option>
+            </select>
+            <br><br>
+            <div class="text-white p-3" :class="{'bg-info':color, 'bg-success':!color }">
+                Zombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit​​, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse.
+            </div>
+            <br>
+            <button class="btn btn-primary" @click="color = !color">Cambiar</button>
+
+        </div>
+        <!--Scripts-->
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/vue.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
+</html>
